@@ -229,12 +229,12 @@ export default function LanguageSelector() {
                 }}
                 onMouseEnter={(e) => {
                   if (language !== lang.code) {
-                    e.target.style.color = isOnSplash ? 'white' : '#266659';
+                    (e.target as HTMLElement).style.color = isOnSplash ? 'white' : '#266659';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (language !== lang.code) {
-                    e.target.style.color = '#266659';
+                    (e.target as HTMLElement).style.color = '#266659';
                   }
                 }}
               >
