@@ -78,9 +78,12 @@ export default function AppPreviewSection() {
         >
             <img 
               src="/Actions.png" 
-              alt="Actions Screen" 
+              alt="Tupi app Actions screen showing daily eco-challenges and carbon tracking features" 
               className="w-[240px] h-auto rounded-2xl shadow-2xl"
               style={{ maxHeight: '80vh', objectFit: 'contain' }}
+              loading="lazy"
+              width="240"
+              height="520"
             />
           </div>
 
@@ -98,9 +101,12 @@ export default function AppPreviewSection() {
           >
             <img 
               src="/Écran d'accueil.png" 
-              alt="Home Screen" 
+              alt="Tupi app home screen displaying sustainability dashboard and user progress" 
               className="w-[280px] h-auto rounded-2xl shadow-2xl"
               style={{ maxHeight: '80vh', objectFit: 'contain' }}
+              loading="lazy"
+              width="280"
+              height="606"
             />
           </div>
 
@@ -118,9 +124,12 @@ export default function AppPreviewSection() {
           >
             <img 
               src="/Écran d'accueil (1).png" 
-              alt="Home Screen Variant" 
+              alt="Tupi app profile screen showing environmental impact metrics and achievements" 
               className="w-[240px] h-auto rounded-2xl shadow-2xl"
               style={{ maxHeight: '80vh', objectFit: 'contain' }}
+              loading="lazy"
+              width="240"
+              height="520"
             />
           </div>
           </div>

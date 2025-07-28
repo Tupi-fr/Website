@@ -4,13 +4,14 @@ import ConceptSection from '../../components/ConceptSection';
 import AppPreviewSection from '../../components/AppPreviewSection';
 import RoadmapSection from '../../components/RoadmapSection';
 import NewContactSection from '../../components/NewContactSection';
-import LanguageSelector, { LanguageProvider } from '../../components/LanguageSelector';
+import LanguageSelectorWithScroll from '../../components/LanguageSelectorWithScroll';
+import { LanguageProvider } from '../../components/LanguageSelector';
 import { ScrollController } from '../../components/ui/ScrollController';
 
 export default function Home() {
   return (
     <LanguageProvider>
-      <LanguageSelector />
+      <LanguageSelectorWithScroll />
       <ScrollController>
         <SplashSection />
         <VisionSection />

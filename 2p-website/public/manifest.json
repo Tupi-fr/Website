@@ -1,0 +1,49 @@
+{
+  "name": "Tupi - Ecology made simple",
+  "short_name": "Tupi",
+  "description": "Gamified sustainability app for tracking carbon footprint and building eco-friendly habits",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF4EC",
+  "theme_color": "#75A874",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "environmental", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tupi app dashboard showing eco-challenges and carbon tracking"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Tupi sustainability features"
+    }
+  ]
+}

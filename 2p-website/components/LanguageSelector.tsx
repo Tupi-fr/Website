@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, createContext, useContext, useEffect } from 'react';
-import { useScrollContext } from './ScrollContext';
+import { useState, createContext, useContext } from 'react';
 
 interface LanguageContextType {
   language: string;
@@ -144,9 +143,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ currentSection = 0 }: { currentSection?: number }) {
   const { language, setLanguage } = useLanguage();
-  const { currentSection } = useScrollContext();
   const [isOpen, setIsOpen] = useState(false);
   
   // Section 0 is splash screen (green), all others are beige
