@@ -165,15 +165,15 @@ export default function NewContactSection() {
                   }}
                   className="transition-all duration-200"
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#266659';
-                    e.target.style.color = 'white';
-                    e.target.style.border = '1px solid #266659';
+                    (e.target as HTMLElement).style.backgroundColor = '#266659';
+                    (e.target as HTMLElement).style.color = 'white';
+                    (e.target as HTMLElement).style.border = '1px solid #266659';
                   }}
                   onMouseLeave={(e) => {
                     if (!isSubmitting) {
-                      e.target.style.backgroundColor = 'transparent';
-                      e.target.style.color = '#266659';
-                      e.target.style.border = '1px solid #266659';
+                      (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                      (e.target as HTMLElement).style.color = '#266659';
+                      (e.target as HTMLElement).style.border = '1px solid #266659';
                     }
                   }}
                 >
