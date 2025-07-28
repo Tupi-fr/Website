@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, createContext, useContext, useEffect } from 'react';
-import { useScrollContext } from './ui/ScrollController';
+import { useScrollContext } from './ScrollContext';
 
 interface LanguageContextType {
   language: string;

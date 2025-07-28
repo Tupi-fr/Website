@@ -10,6 +10,7 @@ import { ScrollController } from '../../components/ui/ScrollController';
 export default function Home() {
   return (
     <LanguageProvider>
+      <LanguageSelector />
       <ScrollController>
         <SplashSection />
         <VisionSection />

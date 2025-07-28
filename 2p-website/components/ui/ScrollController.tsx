@@ -1,121 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef, createContext, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NavigationSidebar } from '../NavigationSidebar';
-import { useLanguage } from '../LanguageSelector';
+import ScrollContext from '../ScrollContext';
 
-interface ScrollContextType {
-  currentSection: number;
-}
-
-const ScrollContext = createContext<ScrollContextType>({
-  currentSection: 0
-});
-
-export const useScrollContext = () => useContext(ScrollContext);
-
-function LanguageSelectorInternal({ currentSection }: { currentSection: number }) {
-  const { language, setLanguage, t } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const isOnSplash = currentSection === 0;
-  
-  const languages = [
-    { code: 'EN', name: 'English', flag: '🇺🇸' },
-    { code: 'FR', name: 'Français', flag: '🇫🇷' }
-  ];
-
-  const handleLanguageSelect = (languageCode: string) => {
-    setLanguage(languageCode);
-    setIsOpen(false);
-  };
-
-  return (
-    <div 
-      style={{ 
-        position: 'fixed', 
-        top: '24px', 
-        right: '24px', 
-        zIndex: 9999 
-      }}
-    >
-      <div style={{ position: 'relative' }}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          style={{
-            backgroundColor: 'transparent',
-            border: 'none',
-            borderRadius: '8px',
-            padding: '8px 12px',
-            fontSize: '12px',
-            fontFamily: 'Inter, sans-serif',
-            color: isOnSplash ? 'white' : '#266659',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontWeight: '500'
-          }}
-        >
-          {languages.find(lang => lang.code === language)?.flag} {language}
-          <span style={{ fontSize: '10px' }}>▼</span>
-        </button>
-
-        {isOpen && (
-          <div
-            style={{
-              position: 'absolute',
-              top: '100%',
-              right: '0',
-              marginTop: '4px',
-              backgroundColor: 'transparent',
-              border: 'none',
-              borderRadius: '8px',
-              boxShadow: 'none',
-              minWidth: '120px',
-              overflow: 'hidden'
-            }}
-          >
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageSelect(lang.code)}
-                style={{
-                  width: '100%',
-                  padding: '8px 12px',
-                  fontSize: '12px',
-                  fontFamily: 'Inter, sans-serif',
-                  color: language === lang.code ? (isOnSplash ? 'white' : '#266659') : '#266659',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  textAlign: 'left',
-                  borderRadius: '0'
-                }}
-                onMouseEnter={(e) => {
-                  if (language !== lang.code) {
-                    e.target.style.color = isOnSplash ? 'white' : '#266659';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (language !== lang.code) {
-                    e.target.style.color = '#266659';
-                  }
-                }}
-              >
-                <span>{lang.flag}</span>
-                <span>{lang.name}</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
 
 interface ScrollControllerProps {
   children: React.ReactNode[];
@@ -227,9 +115,6 @@ export function ScrollController({ children }: ScrollControllerProps) {
         currentSection={currentSection} 
         onSectionClick={scrollToSection} 
       />
-      
-      {/* Language Selector */}
-      <LanguageSelectorInternal currentSection={currentSection} />
 
       {/* Navigation dots */}
       <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 space-y-3">

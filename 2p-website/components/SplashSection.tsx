@@ -17,14 +17,14 @@ export default function SplashSection() {
           style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid white', padding: '8px 16px', borderRadius: '8px', margin: '4px', cursor: 'pointer' }} 
           className="text-sm font-medium transition-all duration-200"
           onMouseEnter={(e) => {
-            e.target.style.backgroundColor = 'white';
-            e.target.style.color = '#75A874';
-            e.target.style.border = '1px solid #75A874';
+            (e.target as HTMLElement).style.backgroundColor = 'white';
+            (e.target as HTMLElement).style.color = '#75A874';
+            (e.target as HTMLElement).style.border = '1px solid #75A874';
           }}
           onMouseLeave={(e) => {
-            e.target.style.backgroundColor = 'transparent';
-            e.target.style.color = 'white';
-            e.target.style.border = '1px solid white';
+            (e.target as HTMLElement).style.backgroundColor = 'transparent';
+            (e.target as HTMLElement).style.color = 'white';
+            (e.target as HTMLElement).style.border = '1px solid white';
           }}
         >
           {t('nav.vision')}
@@ -38,14 +38,14 @@ export default function SplashSection() {
           style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid white', padding: '8px 16px', borderRadius: '8px', margin: '4px', cursor: 'pointer' }} 
           className="text-sm font-medium transition-all duration-200"
           onMouseEnter={(e) => {
-            e.target.style.backgroundColor = 'white';
-            e.target.style.color = '#75A874';
-            e.target.style.border = '1px solid #75A874';
+            (e.target as HTMLElement).style.backgroundColor = 'white';
+            (e.target as HTMLElement).style.color = '#75A874';
+            (e.target as HTMLElement).style.border = '1px solid #75A874';
           }}
           onMouseLeave={(e) => {
-            e.target.style.backgroundColor = 'transparent';
-            e.target.style.color = 'white';
-            e.target.style.border = '1px solid white';
+            (e.target as HTMLElement).style.backgroundColor = 'transparent';
+            (e.target as HTMLElement).style.color = 'white';
+            (e.target as HTMLElement).style.border = '1px solid white';
           }}
         >
           {t('nav.contact')}
